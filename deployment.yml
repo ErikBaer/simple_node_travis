@@ -19,3 +19,9 @@ spec:
         image: erikbaer/simple-node
         ports:
         - containerPort: 80
+      livenessProbe:
+        httpGet:
+            path: /health
+            port: 8080
+        initialDelaysecondes: 3
+        periodseconds: 3
