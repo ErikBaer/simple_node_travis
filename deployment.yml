@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-simple-app
+  name: my-app
   labels:
     app: my-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: my-app
@@ -19,9 +19,3 @@ spec:
         image: erikbaer/simple-node
         ports:
         - containerPort: 80
-      livenessProbe:
-        httpGet:
-            path: /health
-            port: 8080
-        initialDelaysecondes: 3
-        periodseconds: 3
